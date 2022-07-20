@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Aplicación de tareas</title>
+  <title>Task app</title>
   <!-- MDB icon -->
   <link rel="icon" href="img/jquery-e1431944403253.ico" type="image/x-icon">
   <!-- Font Awesome -->
@@ -12,75 +12,94 @@
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- Material Design Bootstrap -->
-  <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="assets/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a href="#" class="navbar-brand">Aplicación de tareas</a>
+<a href="#" class="navbar-brand">Task app 📒</a>
 <ul class="navbar-na ml-auto">
     <form class="form-inline my-2 my-lg-0">
-        <input type="search" id="busqueda" class="form-control mr-sm-2" placeholder="Buscar tarea">
+        <input type="search" id="search-task" class="form-control mr-sm-2" placeholder="Buscar tarea">
         <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
 </ul>
 </nav>
 
 <div class="container p-4">
-    <div class="row">
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <form id="formulario-tarea">
-                        <input type="hidden" id="id_tarea">
-                        <div class="form-group">
-                            <input type="text" id="nombre" class="form-control" placeholder="Nombre de la tarea">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="descripcion" class="form-control" placeholder="Descripcion de la tarea" ></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block text-center">Agregar tarea</button>
-                    </form>
-                </div>
-            </div>
+
+<div class="position-relative">
+    <button class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#form-modal">Agregar tarea</button>
+</div>
+
+<!-- MODAL ADD TASK -->
+<div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Agregar tarea</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form id="form-task">
+          <input type="hidden" id="task-id">
+        <div class="md-form mb-5">
+            <i class="fas fa-tasks prefix grey-text"></i>
+          <input type="text" id="task-name" class="form-control validate" required>
+          <label data-error="wrong" data-success="right">Titulo</label>
         </div>
-        <div class="col-md-7">
-            <div class="card my-4" id="resultados">
-                <div class="card-body">
-                    <ul class="container" id="resultado-tareas"></ul>
-                </div>
-            </div>
-            <table class="table table-bordered table-sm">
-                <thead>
-                    <tr>
-                        <td>ID</td>
-                        <td>Nombre</td>
-                        <td>Descripcion</td>
-                    </tr>
-                </thead>
-                <tbody id="tareas"></tbody>
-            </table>
+        <div class="md-form mb-5">
+           <i class="fas fa-edit prefix grey-text"></i>
+          <input type="text" id="task-description" class="form-control validate" required>
+          <label data-error="wrong" data-success="right">Descripción</label>
         </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="submit" class="btn btn-success">Guardar</button>
+      </div>
+      </form>
     </div>
+  </div>
+</div>
+<!-- FINAL MODAL ADD TASK -->
+
+<!-- View Task -->
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Descripción</td>
+        </tr>
+    </thead>
+    <tbody id="tasks"></tbody>
+</table>
+
+
+
 </div>
 
 
 
 
+
   <!-- jQuery -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="assets/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript" src="js/app.js"></script>
+ <!--  <script type="text/javascript" src="js/app.js"></script> -->
+  <script src="assets/js/index.js"></script>
 
 </body>
 </html>
