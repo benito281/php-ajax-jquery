@@ -1,7 +1,7 @@
 <?php
 
 define('USER_NAME','root');
-define('USER_PASS','piRKy2475na?m');
+define('USER_PASS','');
 define('DB_NAME','tasksdb');
 define('DB_HOST','localhost');
 
